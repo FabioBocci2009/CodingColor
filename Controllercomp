@@ -1,18 +1,22 @@
 #CodingColor
 
+// Verifica che il Controller sia stato caricato correttamente
 console.log("Verifica esecuzione");
 
+// Visualizzazione della data e aggiornamento del saluto
 console.log("data:", d);
 
 document.getElementById("saluto").innerHTML =
     "Oggi è il " + d.toLocaleString();
 
+// Funzione principale: acquisisce la parola e i tre numeri RGB
 function elabora() {
 
     parola = document.getElementById("inParola").value;
 
     let numero = document.getElementById("inNumber").value;
 
+    // Controllo che siano stati inseriti tutti i dati necessari
     if (parola === "") {
         document.getElementById("error").innerHTML =
             "Inserisci una parola!";
@@ -25,6 +29,7 @@ function elabora() {
 
         numero = Number(numero);
 
+        // Controllo che il numero sia intero e compreso tra 0 e 255
         if (numero < 0 || numero > 255 || !Number.isInteger(numero)) {
 
             document.getElementById("error").innerHTML =
@@ -36,30 +41,35 @@ function elabora() {
 
             document.getElementById("error").innerHTML = "Errori";
 
+            // Memorizzazione dei numeri inseriti nell'array colori
             colori.push(numero);
 
             console.log(colori);
 
             document.getElementById("inNumber").value = "";
 
+            // Quando sono stati inseriti tre numeri viene creato il colore RGB
             if (colori.length === 3) {
 
-    let newColor = `rgb(${colori[0]}, ${colori[1]}, ${colori[2]})`;
+                let newColor = `rgb(${colori[0]}, ${colori[1]}, ${colori[2]})`;
 
-    console.log("Colore creato:", newColor);
+                console.log("Colore creato:", newColor);
 
-    document.getElementById("outText").innerHTML = parola;
+                // Applicazione del colore alla parola inserita
+                document.getElementById("outText").innerHTML = parola;
 
-    document.getElementById("outText").style.color = newColor;
+                document.getElementById("outText").style.color = newColor;
 
-    document.getElementById("outText").style.fontSize = "40px";
+                document.getElementById("outText").style.fontSize = "40px";
 
-    colori = [];
-}
+                // Svuotamento dell'array per una nuova elaborazione
+                colori = [];
+            }
         }
     }
 }
 
+// Funzione per cancellare i dati e ripristinare la pagina
 function reset() {
 
     document.getElementById("inNumber").value = "";
