@@ -1,17 +1,76 @@
 #CodingColor
-console.log("verifica esecuzione");
 
-let d = new Date();
+console.log("Verifica esecuzione");
+
 console.log("data:", d);
 
 document.getElementById("saluto").innerHTML =
     "Oggi è il " + d.toLocaleString();
 
 function elabora() {
+
+    parola = document.getElementById("inParola").value;
+
     let numero = document.getElementById("inNumber").value;
-    alert("il numero inserito è: " + numero);
+
+    if (parola === "") {
+        document.getElementById("error").innerHTML =
+            "Inserisci una parola!";
+    }
+    else if (numero === "") {
+        document.getElementById("error").innerHTML =
+            "Inserisci un numero!";
+    }
+    else {
+
+        numero = Number(numero);
+
+        if (numero < 0 || numero > 255 || !Number.isInteger(numero)) {
+
+            document.getElementById("error").innerHTML =
+                "Il numero non rispetta il criterio";
+
+            document.getElementById("inNumber").value = "";
+
+        } else {
+
+            document.getElementById("error").innerHTML = "Errori";
+
+            colori.push(numero);
+
+            console.log(colori);
+
+            document.getElementById("inNumber").value = "";
+
+            if (colori.length === 3) {
+
+    let newColor = `rgb(${colori[0]}, ${colori[1]}, ${colori[2]})`;
+
+    console.log("Colore creato:", newColor);
+
+    document.getElementById("outText").innerHTML = parola;
+
+    document.getElementById("outText").style.color = newColor;
+
+    document.getElementById("outText").style.fontSize = "40px";
+
+    colori = [];
+}
+        }
+    }
 }
 
 function reset() {
+
     document.getElementById("inNumber").value = "";
+    document.getElementById("inParola").value = "";
+
+    document.getElementById("outText").innerHTML = "Output";
+
+    document.getElementById("outText").style.color = "black";
+
+    document.getElementById("error").innerHTML = "Errori";
+
+    colori = [];
+    parola = "";
 }
