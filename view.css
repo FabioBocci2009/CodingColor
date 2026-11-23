@@ -1,0 +1,107 @@
+
+/* L'asterisco significa che vale per tutta la pagina */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333333;
+    padding: 40px;
+    text-align: center;
+}
+
+/* SALUTO */
+#saluto {
+    background-color: #ffffff;
+    color: #555555;
+    font-size: 14px;
+    padding: 10px 20px;
+    display: inline-block;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* TITOLO */
+#title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#title h1 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* INPUT */
+#input {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+    max-width: 600px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #444444;
+}
+
+/* CAMPI DI INSERIMENTO */
+input {
+    font-size: 16px;
+    padding: 8px;
+    margin: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* PULSANTI */
+button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 15px 4px 5px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* OUTPUT */
+#output {
+    background-color: white;
+    margin: 30px auto 15px;
+    padding: 25px;
+    max-width: 600px;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+}
+
+#outText {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* ERRORI */
+#error {
+    color: #e74c3c;
+    font-size: 15px;
+    margin-top: 15px;
+}
