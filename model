@@ -1,0 +1,4 @@
+# CodingColor
+let colori = [];
+let parola = "";
+let d = new Date();
